@@ -1,0 +1,38 @@
+.landing_page {
+    background-image: url('./fondoLanding.jpeg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+   
+  }
+
+.button{
+    padding: 100px;
+    margin: 100px;
+    
+    cursor: pointer;
+    outline: none;
+    background: 
+    url("./XDZT\ \(1\).gif")
+      center no-repeat;
+    background-size: contain;
+    background-position: start;
+    display: inline-flex;
+    position: center;
+
+}
+
+.button:hover {
+    transform: translate(-0.01em, -0.04em);
+    
+   }

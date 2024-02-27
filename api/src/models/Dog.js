@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-    reference_image_id: {
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -44,6 +44,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+    createdInDb:{
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    }
 
   },
   {

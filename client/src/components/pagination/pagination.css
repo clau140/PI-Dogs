@@ -1,0 +1,58 @@
+.container-pagination{
+    max-width: 100%;
+    list-style: none;
+}
+
+
+
+.buttonPages{
+    --glow-color: rgb(58, 3, 58);
+    --glow-spread-color: rgba(191, 123, 255, 0.568);
+    --enhanced-glow-color: rgba(231, 206, 255, 0.651);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 7px 19px;
+    color: var(--glow-color);
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    
+    text-decoration: none;
+    
+    }
+    
+    .buttonPages:hover {
+        
+     transform: translate(0.05em, 0.05em);
+     box-shadow: -0.05em -0.05em;
+     
+    }
+    
+    .buttonPages:active {
+        
+     transform: translate(-0.05em, -0.05em);
+     box-shadow: 0.05em 0.05em;
+     
+     
+    }
+
+    .nums{
+        display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding: 20px;
+            list-style: none;
+    }
+
+    
+
+
+

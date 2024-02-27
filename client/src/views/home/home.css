@@ -1,0 +1,141 @@
+.home{
+    background-image: url('./pxfuel\ \(3\).jpg');
+    display: absolute;
+    background-size: fill;
+}
+
+.home::-webkit-scrollbar {
+    width: 12px;
+  }
+  .home::-webkit-scrollbar-track {
+  background:rgba(124, 81, 143, 0.968);
+  }
+  .home::-webkit-scrollbar-thumb {
+  background-color: rgba(66, 46, 99, 0.748);
+  }
+
+.card_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+    transition: margin-left 0.3s 0.1s;
+    color: white;
+    
+}
+
+
+
+
+
+
+
+.container-create{
+    justify-content: flex-start;
+    margin: 0px 0px 10px 0px;
+    padding: 20px 0px 0px 0px;
+    
+}
+
+.create-button {
+    text-decoration: none;
+      list-style: none;
+}
+
+.container-reload{
+    justify-content: flex-start;
+    margin: 0px 0px 10px 0px;
+    padding: 20px 0px 10px 0px;
+    
+}
+
+
+
+button{
+    
+        --glow-color: rgb(217, 176, 255);
+        --glow-spread-color: rgba(191, 123, 255, 0.781);
+        --enhanced-glow-color: rgb(231, 206, 255);
+        --btn-color: rgb(100, 61, 136);
+        border: .25em solid var(--glow-color);
+        padding: 1em 3em;
+        color: var(--glow-color);
+        font-size: 12px;
+        font-weight: bold;
+        background-color: var(--btn-color);
+        border-radius: 1em;
+        outline: none;
+        box-shadow: 0 0 1em .25em var(--glow-color),
+               0 0 4em 1em var(--glow-spread-color),
+               inset 0 0 .75em .25em var(--glow-color);
+        text-shadow: 0 0 .5em var(--glow-color);
+        position: relative;
+        transition: all 0.3s;
+        
+        text-decoration: none;
+       
+}
+
+button:hover{
+    color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active{
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+}
+
+.container-filters {
+    margin: 60px 0px 0px 0px ;
+    
+  }
+
+  select{
+    --glow-color: rgb(207, 187, 209);
+    background: rgba(66, 2, 66, 0.959);
+    color: var(--glow-color);
+  }
+
+  select{
+    --glow-color: rgb(189, 133, 194);
+  --glow-spread-color: rgba(191, 123, 255, 0.568);
+  --enhanced-glow-color: rgba(231, 206, 255, 0.651);
+  --btn-color: rgb(100, 61, 136);
+    width: 10%;
+    border: .25em solid;
+    background: linear-gradient(rgba(66, 2, 66, 0.555), rgba(78, 2, 78, 0.8));
+    color: var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+         text-decoration: none;
+         transition: all 0.4s;
+         border-radius: 1em;
+  outline: none;
+  }
+
+  select:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    
+   }
+   
+   select:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+    
+   }
+
+   option {
+    
+    background: rgba(66, 2, 66, 0.959);
+    color: var(--glow-color);
+  }
+  

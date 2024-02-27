@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//Provider sirve para proveer a toda mi applicacion del estado que se encuentra dentro de mi store
+import { Provider } from 'react-redux';
+import {store} from './redux/store/index'
+
+
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
