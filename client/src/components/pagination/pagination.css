@@ -44,6 +44,10 @@
      
     }
 
+    .buttonPages::after{
+        color: #000;
+    }
+
     .nums{
         display: flex;
             justify-content: center;

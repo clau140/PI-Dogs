@@ -1,41 +1,126 @@
 .detail {
+    min-height: 100vh;
     width: 100%;
-    height: 100vh;
-    
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;  
+    background: url('./fondo.jpg');
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 
 }
 
 .containerMain {
+  margin: 0px auto 100px auto;
+  width: 95%;
+  height: auto;
+  display: flex;
+  background: transparent;
+  
+ 
+}
+
+.containerButton{
     display: flex;
     justify-content: center;
-    border: 1px solid rgb(80, 78, 78);
-    border-radius: 10px;
-    z-index: 1;
-    margin: 10px;
+    margin: 80px;
+    padding: 0px 500px 0px 0px;
     
-    background-size: cover;
-    background: linear-gradient(rgba(38, 3, 133, 0.842), rgba(57, 3, 100, 0.76));
+}
+
+.containerImage img {
+    height: auto;
+   width: 80%;
+   background-size: cover;
    
+   border: 2px solid rgb(70, 20, 187);
+   
+}
+
+.containerDescription{
+    width: 50%;
+   
+
+    background: linear-gradient(rgba(99, 28, 82, 0.822), rgba(34, 3, 29, 0.945));
+    border: 2px solid rgb(70, 20, 187);
+    padding: 20px 20px 15px 20px;
+    height: auto;
     
     
 }
 
-.containerImage {
-    display: flex;
-    justify-content: center;
+.name{
+    padding: 40px 0px 20px 0px;
+    color: #1b061f80;
 }
 
-.detail img {
-    border: 3px solid rgb(71, 69, 69);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 10px;
-    width: 600px;
-    height: 400px;
+.data{
+    padding: 10px;
+    margin-top: 2rem;
+    text-justify:distribute;
+    color: #cbb8cc80;
+    text-align: start;
+   
+   
+    width: auto;
+	height: 200px;
+	
+  
 }
+
+.link{
+    text-decoration: none;
+    list-style: none;
+}
+
+.detailButton {
+    margin: 0px;
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    
+    text-decoration: none;
+   }
+
+   .detailButton::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   .detailButton:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   .detailButton:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+  

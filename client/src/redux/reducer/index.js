@@ -113,6 +113,16 @@ const reducer = (state = initialState, action) =>{
                 : filterCreated
             }
 
+            case 'POST_DOG':
+            return {
+                ...state,
+            }
+
+            case 'DELETE_DOG':
+                return{
+                    ...state,
+                }
+
         default:
             return state;
     }

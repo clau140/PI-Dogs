@@ -55,26 +55,53 @@ const getDogId = async (id)=>{
 }
 
 
-const createDog = async ({name, image, height, weight, life_span, temperament  })=>{
+const createDog = async ({
+    name, 
+    image, 
+    heightMin, 
+    heightMax, 
+    weightMin, 
+    weightMax, 
+    life_span,
+    createdInDb,
+    temperament  
+})=> {
     try {
-        let dogCreated= await Dog.create({
+
+        const newDog= await Dog.create({
             name, 
             image, 
-            height, 
-            weight, 
+            heightMin, 
+            heightMax,
+            weightMin, 
+            weightMax,
             life_span,
             createdInDb
 
         })
 
-        let temperamentDb= await Temperament.findAll({
+        // add temperaments to newDog
+		temperament.length
+        ? temperament.map(async (name) => {
+                const temp = await Temperament.findOne({
+                    attributes: ["id"],
+                    where: { name: name },
+                })
+                await newDog.addTemperament(temp.id)
+          })
+        : []
+        return newDog
+
+
+        /*let temperamentDb= await Temperament.findAll({
             where: {name: temperament}
         })
 
         let created= dogCreated.addTemperament(temperamentDb)
-         return created
+         return created */
         
-    } catch (error) {
+    } 
+    catch (error) {
         return error
     }
 }

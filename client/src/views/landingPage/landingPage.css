@@ -1,5 +1,5 @@
 .landing_page {
-    background-image: url('./fondoLanding.jpeg');
+    background-image: url('./landing.jpg');
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
@@ -16,9 +16,16 @@
    
   }
 
-.button{
-    padding: 100px;
-    margin: 100px;
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin:  420px 0px 0px 558px;
+    
+}
+
+.buttonStart{
+    padding: 70px;
+    margin: 70px;
     
     cursor: pointer;
     outline: none;
@@ -29,10 +36,6 @@
     background-position: start;
     display: inline-flex;
     position: center;
+   
 
 }
-
-.button:hover {
-    transform: translate(-0.01em, -0.04em);
-    
-   }

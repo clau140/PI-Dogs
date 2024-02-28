@@ -87,11 +87,11 @@ export default function Home (){
     return(
         <div className='home'>
          <div className='container-create'>
-          <button><Link className='create-button' to= '/dog'>Create Dog</Link></button>
+          <button className='button'><Link className='create-button' to= '/dog'>Create Dog</Link></button>
          </div>
 
          <div className='container-reload'>
-         <button className='reload' onClick={e=> {handleClick(e)}}>Reload</button>
+         <button className='button' onClick={e=> {handleClick(e)}}>Reload</button>
          </div>
          
          

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import {getDetail} from '../../redux/actions/index'
+import {getDetail, deleteDog} from '../../redux/actions/index'
 import Loader from "../loader/Loader";
 import './detail.css';
 
@@ -30,10 +30,17 @@ export default function Detail(){
         dispatch(getDetail(id))
         .then(()=> setCarga(false))
         .catch(()=>{
-            alert('Game not found')
+            alert('Dog not found')
             window.location.replace('http://localhost:3000/home')
         })
     }, [id, dispatch]);
+
+    const handleDelete = (e) =>{
+        e.preventDefault();
+        dispatch(deleteDog(id));
+        alert('Dog deleted');
+        window.location.replace('http://localhost:3000/home')
+    }
 
     if(carga){
         return(
@@ -45,9 +52,17 @@ export default function Detail(){
         <div className="detail">
 
            <div className='containerButton'>
-             <Link className='detailButton' to={"/home"}>
-              Go back Home
+             
+             <button><Link  className='detailButton' to={"/home"}>
+               Home
              </Link>
+             </button>
+             {
+            detail.createdInDb? <div className="containerDelete">
+                <button className="detailButton" onClick={(e)=> handleDelete(e)}>Delete Dog</button>
+
+            </div> : <div></div>
+        }
            </div>
 
            <div className="containerMain">
@@ -64,10 +79,18 @@ export default function Detail(){
                 </div>
 
                 <div className="data">
-                    <p>{detail.temperament}</p>
-                    <p>{detail.height}</p>
-                    <p>{detail.weight}</p>
-                    <p>{detail.life_span}</p>
+                    <h3>Temperaments: { detail.temperament?.map((e)=> e.name).join(', ')
+                    
+                    }</h3>
+
+                    <h3>Height: {!detail.createdInDb? detail.height :
+                    detail.heightMin + ' - ' + detail.heightMax}
+                    </h3>
+
+                    <h3>Weight: {!detail.createdInDb? detail.weight :
+                    detail.weightMin + ' - ' + detail.weightMax}</h3>
+
+                    <h3>Life span: {detail.life_span}</h3>
                  
 
                 </div>

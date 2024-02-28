@@ -1,6 +1,6 @@
 import axios from 'axios';
-//las actions son funciones que iban a retornar algo de forma asincrona 
-//export const GET_DOGS= "GET_DOGS"
+
+
 
 export function getDogs(){
     return async function(dispatch){
@@ -94,10 +94,26 @@ export function filterCreated(payload){
     }
 }
 
-export function postDog(dog){
-    return async function(){
-        const response= await axios.post('http://localhost:3001/dogs', dog);
+export function postDog(payload){
+    return async function(dispatch){
+        const response= await axios.post('http://localhost:3001/dogs', payload);
         return response;
     }
 
 }
+
+export const deleteDog = (id) => async (dispatch) =>{
+
+    try {
+    return await axios.delete(`http://localhost:3001/dogs/${id}`)
+    .then( (dog) => dispatch ({
+    type: 'DELETE_DOG',
+    payload: dog.data
+  }))
+    } catch (error) {
+      return error;
+    }
+
+  
+   
+};

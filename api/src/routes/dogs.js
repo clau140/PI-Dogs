@@ -1,4 +1,5 @@
 const { Router } = require("express")
+const {Dog, Temperament} = require('../db');
 const {getAllDogs, getDogId, createDog, deleteDog} = require("../controllers/dogs")
 
 const router = Router();
@@ -50,12 +51,14 @@ router.get('/:id', async (req, res)=>{
 });
 
 //POST /dogs
+
+
 router.post('/', async (req, res)=>{
     try {
-        const {name, image, height, weight, life_span, temperament} = req.body
+        const {name, image, heightMin, heightMax, weightMin, weightMax, life_span} = req.body
 
-        if(!name || !image|| !height || !weight || !life_span){
-            res.status(404).send('Faltan datos')
+        if(!name || !image|| !heightMin || !heightMax || !weightMin || !weightMax || !life_span){
+            res.status(404).send('Must complete all required fields')
         } else{
             const response = await createDog(req.body)
             res.status(200).send(response)
@@ -65,6 +68,9 @@ router.post('/', async (req, res)=>{
     }
 
 })
+
+
+
 
 //DELETE by id database
 router.delete('/:id', async (req, res)=>{
