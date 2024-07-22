@@ -5,15 +5,6 @@ import { postDog, getTemperament } from "../../redux/actions";
 import Loader from '../loader/Loader';
 import './create.css';
 
-/*
--  Nombre.
--  Altura **(diferenciar entre altura mínima y máxima de la raza)**.
--  Peso **(diferenciar entre peso mínimo y máximo de la raza)**.
--  Años de vida.
--  Posibilidad de seleccionar/agregar varios temperamentos en simultáneo.
--  Botón para crear la nueva raza.
-*/
-
 function validation(input){
     let errors = {};
 
@@ -34,6 +25,8 @@ function validation(input){
       if(!input.temperament) {
         errors.temperament = 'Select one or more temperaments, please';
       }
+     
+      
 
 
 //height
@@ -120,14 +113,24 @@ const Create = () =>{
     }
 
     function handleTemperament(e){
+
+     
+
       setInput({
         ...input,
         temperament: [...input.temperament, e.target.value]
       })
+
+      setErrors(validation({
+        ...input,
+        [e.target.name] : e.target.value
+      }))
     }
 
     function handleSubmit(e){
       e.preventDefault();
+
+      
       
       setErrors(validation({
         ...input,

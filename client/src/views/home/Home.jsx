@@ -50,9 +50,9 @@ export default function Home (){
      }
 
     
-     function handleClick(e){ //e es evento
+     function handleClick(e){ 
         e.preventDefault();
-        dispatch(getDogs()); //me lo resetea
+        dispatch(getDogs()); 
     }
 
     function handleFilteredTemperament(e){
@@ -84,77 +84,71 @@ export default function Home (){
         setOrder(e.target.value)
     }
 
-    return(
+    return (
         <div className='home'>
-         <div className='container-create'>
-          <button className='button'><Link className='create-button' to= '/dog'>Create Dog</Link></button>
-         </div>
-
-         <div className='container-reload'>
-         <button className='button' onClick={e=> {handleClick(e)}}>Reload</button>
-         </div>
-         
-         
-         <SearchBar/>
-
-         <div className='container-filters'>
-            <select onChange={(e)=> handleFilteredTemperament(e)}>
-                <option>Temperaments</option>
-                <option value="All">All</option>
-
-                {
-                    allTemperament.map((elem)=> (
-                        <option key={elem.name} value={elem.name}>
-                            {elem.name}
-
-                        </option>
-                    ))
-                }
-            </select>
-            <select onChange={(e)=> handleSortByName(e)}>
-                <option value="Ascendente">A-Z</option>
-                <option value="Descendente">Z-A</option>
-            </select>
-
-            <select onChange={(e)=> handleSortByWeight(e)}>
-                <option>Weight</option>
-                <option value="AscWeight">Asc</option>
-                <option value="DesWeight">Desc</option>
-
-            </select>
-
-            <select onChange={(e)=> handleFilteredCreated(e)}>
-                <option value="All">All</option>
-                <option value="Created">Created</option>
-                <option value="Existent">Existent</option>
-
-            </select>
-         </div>
-
-         <ul className='card_grid'>
-            {currentDogs?.map((el) => {
-                return (
-                
-                     <Card
+            <div className='container-center'>
+                <div className='container-create'>
+                    <button className='button'>
+                    <Link className='create-button' to='/dog'>Create Dog</Link>
+                    </button>
+                </div>
+    
+                <div className='container-reload'>
+                    <button className='button' onClick={e => { handleClick(e) }}>Reload</button>
+                </div>
+    
+                <div className='searchbar-container'>
+                <SearchBar />
+                </div>
+    
+                <div className='container-filters'>
+                    <select onChange={(e) => handleFilteredTemperament(e)}>
+                        <option>Temperaments</option>
+                        <option value="All">All</option>
+                        {allTemperament.map((elem) => (
+                            <option key={elem.name} value={elem.name}>
+                                {elem.name}
+                            </option>
+                        ))}
+                    </select>
+                    <select onChange={(e) => handleSortByName(e)}>
+                        <option value="Ascendente">A-Z</option>
+                        <option value="Descendente">Z-A</option>
+                    </select>
+    
+                    <select onChange={(e) => handleSortByWeight(e)}>
+                        <option>Weight</option>
+                        <option value="AscWeight">Asc</option>
+                        <option value="DesWeight">Desc</option>
+                    </select>
+    
+                    <select onChange={(e) => handleFilteredCreated(e)}>
+                        <option value="All">All</option>
+                        <option value="Created">Created</option>
+                        <option value="Existent">Existent</option>
+                    </select>
+                </div>
+            </div>
+    
+            <ul className='card_grid'>
+                {currentDogs?.map((el) => (
+                    <Card
                         id={el.id}
                         name={el.name}
                         image={el.image}
                         temperament={el.temperament}
                         weight={el.weight}
-
                         key={el.id}
                     />
-                    
-                    );
-                  })}
-         </ul>
-         <Pagination
-         allDogs={allDogs.length}
-         dogsPerPage={dogsPerPage}
-         pagination={pagination}
-         />
-         
-         
+                ))}
+            </ul>
+            <Pagination
+                allDogs={allDogs.length}
+                dogsPerPage={dogsPerPage}
+                pagination={pagination}
+            />
         </div>
-    )
-}
+    );
+    
+
+    }

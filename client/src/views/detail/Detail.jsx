@@ -31,7 +31,7 @@ export default function Detail(){
         .then(()=> setCarga(false))
         .catch(()=>{
             alert('Dog not found')
-            window.location.replace('http://localhost:3000/home')
+           // window.location.replace('http://localhost:3000/home')
         })
     }, [id, dispatch]);
 
@@ -39,7 +39,7 @@ export default function Detail(){
         e.preventDefault();
         dispatch(deleteDog(id));
         alert('Dog deleted');
-        window.location.replace('http://localhost:3000/home')
+       // window.location.replace('http://localhost:3000/home')
     }
 
     if(carga){
@@ -53,7 +53,7 @@ export default function Detail(){
 
            <div className='containerButton'>
              
-             <button><Link  className='detailButton' to={"/home"}>
+             <button><Link className='detailButton' to={"/home"}>
                Home
              </Link>
              </button>
@@ -79,7 +79,7 @@ export default function Detail(){
                 </div>
 
                 <div className="data">
-                    <h3>Temperaments: { detail.temperament?.map((e)=> e.name).join(', ')
+                    <h3>Temperaments: { detail.temperament
                     
                     }</h3>
 
